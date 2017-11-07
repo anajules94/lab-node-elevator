@@ -27,13 +27,12 @@ class Elevator {
     this._passengersEnter();
     this._passengersLeave();
   }
-  _passengersEnter(person.name, person.originFloor, person.destinationFloor) {
-    //falta codigo When the elevator arrives to any floor ~ me lie aqui
-    // if (person.originFloor && this.waitingList.length > 0) {
-    //   this.passenger.push(person.name);
-    //   this.waitingList.splice(person.name);
-    //   this.requests.push(person.destinationFloor);
-    //   console.log (person.name  +  "has entered the elevator")
+  _passengersEnter(person) {
+    if (person.originFloor && this.waitingList.length > 0) {
+      this.passenger.push(person.name);
+      this.waitingList.splice(person.name);
+      this.requests.push(person.destinationFloor);
+      console.log (person.name  +  "has entered the elevator")
     }
   }
   _passengersLeave(person) {
@@ -47,12 +46,22 @@ class Elevator {
     this.floor++
     this.direction = 'up';
     if(this.floor == 10) this.direction = 'down'
+    //quien esta como originFloor o destinationFloor
+    if (this.floor== person.originFloor {
+      this._passengersEnter
+    } else if  (this.floor == person.destinationFloor) {
+      this._passengersLeave
+    }
    }
 
   floorDown() {
     this.floor--
     this.direction = 'down';
-      if(this.floor == 0) this.direction = 'up'
+      if(this.floor == 0) {this.direction = 'up'}
+      //quien esta como originFloor o destinationFloor
+      if (this.floor== person.originFloor || this.floor ==person.destinationFloor) {
+
+      }
   }
   call(person) {
     this.waitingList.push(person);
